@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>HTML5 Pacman</title>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+  <!-- <script type="text/javascript" src="C:\Users\ManyaAadu\Desktop\NeuroMusic\Neuro_Music_2\Website\id_generator.js"></script> -->
+  <style type="text/css">
+    @font-face {
+      font-family: 'BDCartoonShoutRegular';
+      src: url('BD_Cartoon_Shout-webfont.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    #pacman {
+      align-items: center;
+      /* height: 450px;
+      width: 342px; */
+      "Can be decided later!"
+      height: 400px;
+      width: 450px;
+
+      margin: 0 auto;
+    }
+
+    #shim {
+      font-family: BDCartoonShoutRegular;
+      position: absolute;
+      visibility: hidden
+    }
+
+    h1 {
+      font-family: BDCartoonShoutRegular;
+      text-align: center;
+    }
+
+    body {
+      width: 342px;
+      margin: 0px auto;
+      font-family: sans-serif;
+      background-color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    #Timer {
+      position: absolute;
+      border: 5px solid;
+      border-color: black;
+      top: 20px;
+      right: 70px;
+      padding: 10px;
+      box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+      font-size: 200;
+      font-family: Trebuchet MS;
+    }
+
+    .next_btn{
+      font-size: 20px;
+      font-weight: 500;
+      color: #fff ;
+      padding: 10px 15px;
+      outline: none;
+      border: 1px;
+      border-radius: 5px;
+      background: #007bff;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      pointer-events: none;
+      display: none;
+    }
+    .next_btn.show{
+      pointer-events: all;
+      display: block;
+    }
+
+
+  </style>
+
+</head>
+
+<body>
+
+  <div id="shim">shim for font face</div>
+  <h1>Welcome</h1>
+
+  <div id="demo"></div>
+
+  <p>
+    <b>
+      You have <em>20s</em> to collect as many coins <br>(the white dots) as possible.<br><br>
+      Use the arrow keys on your keyboard to play the game.<br><br>
+      After the time is over click on the Next button that appears at the bottom of the page to move ahead with the experiment.<br><br>
+    </b>
+  </p>
+  <!-- <a href="http://arandomurl.com/">Writeup</a> |
+  Code on <a href="http://arandomurl.com/">Github</a> -->
+
+  <!-- <button type="button" name="button" onclick="startTimer()">Ready?</button> -->
+  <div id="Timer">
+    <div class="base-timer">
+      <span id="base-timer-label" class="base-timer__label">Timer </span>
+    </div>
+  </div>
+
+  <div id="pacman"></div>
+  <!-- <a href="C:\Users\ManyaAadu\Desktop\NeuroMusic\Neuro_Music_2\Website\page4\page_4.html">
+    <button id = "next" class="next_btn" type="button" name="button" >Next</button>
+  </a> -->
+  <br><br>
+  <a href="./page2.html">
+    <button id="next" class="next_btn" type="button" name="button">Next</button>
+  </a>
+
+  <br><br><br>
+  <script src="pacman.js"></script>
+  <script src="modernizr-1.5.min.js"></script>
+
+  <script>
+    var el = document.getElementById("pacman");
+
+    if (Modernizr.canvas && Modernizr.localstorage &&
+      Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
+      window.setTimeout(function() {
+        PACMAN.init(el, "./");
+      }, 0);
+    } else {
+      el.innerHTML = "Sorry, needs a decent browser<br /><small>" +
+        "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
+    }
+  </script>
+
+
+  <!--
+  <script type="text/javascript">
+
+  function displayScore(){
+    return user.theScore();
+  }
+  </script>
+-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Add these three for firebase-js connectivity -->
+  <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-database.js"></script>
+
+
+</body>
+
+</html>

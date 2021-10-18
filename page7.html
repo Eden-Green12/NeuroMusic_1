@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Block | 4 </title>
+  <link rel="stylesheet" href="./page_4.css">
+  <!-- FontAweome CDN Link for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+  <!-- start Quiz button -->
+  <div class="start_btn"><button>Next Part</button></div>
+
+  <!-- Info Box -->
+
+  <div id="demo"></div>
+
+  <div class="info_box">
+    <div class="info-title"><span>Couple of things to keep in mind</span></div>
+    <div class="info-list">
+      <div class="info">1. You will have only <span>7 seconds</span> to answer each question.</div>
+      <div class="info">2. You have two choices for each question. Yes or No.</div>
+      <div class="info">3. Please do not refresh the page.</div>
+      <!--- Add more rules here ----->
+    </div>
+    <div class="buttons">
+      <!-- <button class="quit">Exit Quiz</button>  -->
+
+      <!-- <button id="continue" class="restart" onclick="autoplay()"> -->
+      <!-- <audio class="afterglow" id="myvideo" width="15" height="15">
+        <source type="video/mp4" src="/path/to/myvideo.mp4" />
+        <source type="audio/mpeg" src="C:\Users\ManyaAadu\Desktop\NeuroMusic\Neuro_Music_2\Website\page4\BurjKhalifa.mp3" />
+      </audio> -->
+      <!-- <object data="C:\Users\ManyaAadu\Desktop\NeuroMusic\Neuro_Music_2\Website\page4\BurjKhalifa.mp3" autoplay></object> -->
+      <button id="continue" class="restart">
+        Continue
+      </button> <!-- We will go to the next round using this Button , take the name of class into account-->
+    </div>
+  </div>
+
+  <!-- Quiz Box -->
+
+  <div class="quiz_box">
+    <div id="demo"></div>
+    <header>
+      <div class="title"> Main | Task </div>
+      <div class="timer">
+        <div class="time_left_txt">Time Left</div>
+        <!-- Timer Set Here -->
+        <div id="base-timer-label" class="timer_sec">07</div>
+      </div>
+      <div class="time_line"></div>
+    </header>
+    <section>
+      <div id="question" class="que_text">
+        <!-- Here randomize the vlaue of both 10's -->
+        <span>Your partner recieves <span id='one'>10</span> shocks<br>and they recieve <span>10</span> Rs.
+          Do you think this is a morally acceptable agreement? </span>
+      </div>
+      <div class="option_list">
+        <div class="option">
+          <span id="Yes">Yes</span>
+          <!--<div class="icon tick"><i class="fas fa-check"></i></div>-->
+        </div>
+        <div class="option">
+          <span id="No">No</span>
+          <!--<div class="icon cross"><i class="fas fa-times"></i></div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- footer of Quiz Box -->
+    <!-- This can be removed  -->
+    <footer>
+      <div class="total_que">
+        <!-- Here I've inserted Question Count Number from JavaScript -->
+        <span>
+          <p>2</p>of<p>5</p>Questions
+        </span>
+      </div>
+      <!-- <button class="finish_btn">Finish</button> -->
+      <button class="next_btn">Next</button>
+    </footer>
+  </div>
+
+  <!-- Result Box -->
+  <div class="result_box">
+    <div class="icon">
+      <i class="fas fa-crown"></i>
+    </div>
+    <!--- Display You have completed the experiment at the end of the 4 parts --->
+    <div class="complete_text">
+      <span>Congratulations</span> 🎊 !
+      <div class="">
+        You have completed the Experiment! <br>
+        Thank you!
+      </div>
+      <!-- <div class="">
+        There is a break of <span>60 seconds</span> following which the next Part of the experiment will begin.
+      </div> -->
+    </div>
+    <div class="score_text">
+      <!-- Here I've inserted Score Result from JavaScript -->
+      <!-- This can be removed -->
+      <!-- <span>and Sorry you got only <p>2</p> out of <p>5</p>correct</span> -->
+    </div>
+    <div class="buttons">
+      <button id="continue2" class="restart" onclick="Close()">
+        Finish
+      </button>
+      <script type="text/javascript">
+        function Close(){
+          window.close();
+        }
+      </script>
+
+
+      <!--Do not need the Quit Button, we will use continue to go to the next phase -->
+      <!-- <button class="quit">Quit</button> -->
+    </div>
+  </div>
+
+  <!-- Inside this JavaScript file I've inserted Questions and Options only
+  <script src="js/questions.js"></script> -->
+
+
+  <!-- Inside this JavaScript file I've coded all Quiz Codes
+  <script src="js/script.js"></script> -->
+
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-database.js"></script>
+  <!-- <script type="text/javascript" src="C:\Users\ManyaAadu\Desktop\NeuroMusic\Neuro_Music_2\Website\id_generator.js"></script> -->
+  <script type="text/javascript" src="music.js"></script>
+  <script type="text/javascript" src="options.js"></script>
+  <script type="text/javascript" src="script7.js"></script>
+
+
+</body>
+
+</html>

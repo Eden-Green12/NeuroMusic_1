@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Pre-Screening Survey</title>
+  <link rel="stylesheet" href="./page1.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+</head>
+
+<body>
+  <!-- <div class="start">
+    <button class="button">Start Experiment</button> <br><br><br> -->
+    <!-- <h3>Id:</h3> -->
+    <!-- <div class="input_id">
+      <input type="text" name="id" placeholder="type id here" id="p_id">
+      <br>
+    </div>
+  </div> -->
+
+  <!-- Survey Introduction -->
+  <div class="introduction">
+    <div class="info">
+      <h1>RESEARCH PROJECT</h1>
+      <h2>I invite you to fill in a form:</h2>
+      <!-- <h3>Id:</h3> -->
+      <!-- <div class="input_id">
+        <input type="text" name="id" id="p_id">
+        <br>
+      </div> -->
+
+      <h2>Survey Introduction</h2>
+
+      <p>Dear Participants, this research project is being conducted <br>
+        by XYZ,<br></p>
+      <p>This survey includes 3 scales which require quick and honest answers.<br>
+        I assure you that this data will only be used for research purposes <br>
+        and all personal identification will be removed.
+        All statements are equally important.<br>
+        Please do not omit or skip anyone as then the entire survey loses value.<br>
+        I sincerely thank you for your support and cooperation.
+        Please answer quickly and honestly.</p>
+      If you have questions regarding this study, you may contact - <br>
+      include mail ids here <br>
+    </div>
+    <div class="consent_form">
+      <h2>Consent Form</h2>
+      I consent to participate in this research survey assessing certain aspects of my behaviour.<br>
+      I understand that the data collected here will be used purely<br>
+      for research purposes and anonymity will be maintained.<br>
+      I am free to withdraw from the survey at any point and
+      I can contact the researcher at any time for clarifications.<br>
+      I have understood all the terms.<br><br>
+
+      <input type="radio" name="option" value="I Agree" id="I_agree">I Agree <br><br>
+      <script type="text/javascript">
+        // if the person has not selected I agree. Exit the experiment
+      </script>
+
+    </div>
+    <button class="next_button" type="button" name="button">Next</button><br><br>
+  </div>
+
+  <!-- The pre-screening questions  -->
+
+  <div class="pre-screening-form">
+    <div class="questions">
+      <h3>Please answer these questions:</h3>
+      1. Have you ever been diagnosed with any physical health condition?<br>
+      <div class="options">
+        <input id="ques_1_1" type="radio" name="opt1" value="Yes">Yes
+        <input id="ques_1_2" type="radio" name="opt1" value="Yes">No
+      </div>
+      <div class="textarea-heading">
+        If yes please mention<br>
+      </div>
+      <textarea id="ques_1_text" name="textarea-1" rows="5" cols="80"></textarea><br><br>
+    </div>
+    <div class="questions">
+      2. Have you ever been diagnosed with any mental health condition?
+      <div class="options">
+        <input id="ques_2_1" type="radio" name="opt2" value="Yes">Yes
+        <input id="ques_2_2" type="radio" name="opt2" value="Yes">No
+      </div>
+      <div class="textarea-heading">
+        If yes please mention
+      </div>
+      <textarea id="ques_2_text" name="textarea-2" rows="5" cols="80"></textarea><br><br>
+    </div>
+    <div class="questions">
+      3. Have you acquired the novel coronavirus in the past 3 months?
+      <div class="options">
+        <input id="ques_3_1" type="radio" name="opt3" value="Yes">Yes
+        <input id="ques_3_2" type="radio" name="opt3" value="Yes">No<br><br>
+      </div>
+    </div>
+    <div class="questions">
+      4. Have you lost a loved one to any loved one in the past 3 months?<br>
+      (Maybe to Covid or any other physical/mental illness)
+      <div class="options">
+        <input id="ques_4_1" type="radio" name="opt4" value="Yes">Yes
+        <input id="ques_4_2" type="radio" name="opt4" value="Yes">No<br><br>
+      </div>
+    </div>
+    <div class="questions">
+      5. Have you encountered any traumatic event in the past 3 months?
+      <div class="options">
+        <input id="ques_5_1" type="radio" name="opt5" value="Yes">Yes
+        <input id="ques_5_2" type="radio" name="opt5" value="Yes">No<br><br>
+      </div>
+    </div>
+    <div class="questions">
+      6. Please mention your approximate screen time on daily basis (in hours) :<br>
+      <input id="ques_6_text" type="text" name="screen-time"><br><br>
+    </div>
+    <div class="questions">
+      7. Please mention which of the following genres of music you are familiar with:
+      <div class="options">
+        <input id="ques_7_1" type="checkbox" name="opt7" value="Indian Classical Music / Hindustani Classical Music">i) Indian Classical Music / Hindustani Classical Music<br>
+        <input id="ques_7_2" type="checkbox" name="opt7" value="Jazz">ii) Jazz<br>
+        <input id="ques_7_3" type="checkbox" name="opt7" value="Rock">iii) Rock<br>
+        <input id="ques_7_4" type="checkbox" name="opt7" value="Pop">iv) Pop<br>
+        <input id="ques_7_5" type="checkbox" name="opt7" value="RnB">v) RnB<br>
+        <input id="ques_7_6" type="checkbox" name="opt7" value="Country">vi) Country<br>
+        <input id="ques_7_7" type="checkbox" name="opt7" value="Rap">vii) Rap<br>
+        <div class="textarea-heading">
+          Other please mention
+        </div>
+        <textarea id="ques_7_text" name="textarea-3" rows="5" cols="80"></textarea><br><br>
+
+      </div>
+    </div>
+    <button class="next_button" type="button" name="button">Next</button><br><br>
+  </div>
+
+  <!-- Scale 1 questions -->
+
+  <div class="scale1">
+    <div class="intro">
+      <h2>Instructions:</h2><br>
+
+      <h3>
+        Please read each statement and select a number between 0, 1, 2 or 3 <br>
+        which indicates how much the
+        statement applied to you over the past week.<br>
+      </h3>
+      <span>
+        <b>There are no right or wrong answers. Do not spend too much time on any statement.</b>
+      </span><br><br>
+
+      The rating scale is as follows:<br>
+      0 : Did not apply to me at all<br>
+      1 : Applied to me to some degree, or some of the time<br>
+      2 : Applied to me to a considerable degree or a good part of time<br>
+      3 : Applied to me very much or most of the time<br><br>
+    </div>
+    <div class="list_questions">
+      <div class="question">
+        1. I found it hard to wind down
+
+        <input type="radio" name="option1" value="0">0
+        <input type="radio" name="option1" value="1">1
+        <input type="radio" name="option1" value="2">2
+        <input type="radio" name="option1" value="3">3
+      </div>
+      <div class="question">
+        2. I was aware of dryness of my mouth
+        <input type="radio" name="option2" value="0">0
+        <input type="radio" name="option2" value="1">1
+        <input type="radio" name="option2" value="2">2
+        <input type="radio" name="option2" value="3">3
+      </div>
+      <div class="question">
+        3. I couldn’t seem to experience any positive feeling at all
+        <input type="radio" name="option3" value="0">0
+        <input type="radio" name="option3" value="1">1
+        <input type="radio" name="option3" value="2">2
+        <input type="radio" name="option3" value="3">3
+      </div>
+      <div class="question">
+        4. I experienced breathing difficulty (e.g. excessively rapid breathing,<br>
+        breathlessness in the absence of physical exertion)
+        <input type="radio" name="option4" value="0">0
+        <input type="radio" name="option4" value="1">1
+        <input type="radio" name="option4" value="2">2
+        <input type="radio" name="option4" value="3">3
+      </div>
+      <div class="question">
+        5. I found it difficult to work up the initiative to do things
+        <input type="radio" name="option5" value="0">0
+        <input type="radio" name="option5" value="1">1
+        <input type="radio" name="option5" value="2">2
+        <input type="radio" name="option5" value="3">3
+      </div>
+      <div class="question">
+        6. I tended to over-react to situations
+        <input type="radio" name="option6" value="0">0
+        <input type="radio" name="option6" value="1">1
+        <input type="radio" name="option6" value="2">2
+        <input type="radio" name="option6" value="3">3
+      </div>
+      <div class="question">
+        7. I experienced trembling (e.g. in the hands)
+        <input type="radio" name="option7" value="0">0
+        <input type="radio" name="option7" value="1">1
+        <input type="radio" name="option7" value="2">2
+        <input type="radio" name="option7" value="3">3
+      </div>
+      <div class="question">
+        8. I felt that I was using a lot of nervous energy
+        <input type="radio" name="option8" value="0">0
+        <input type="radio" name="option8" value="1">1
+        <input type="radio" name="option8" value="2">2
+        <input type="radio" name="option8" value="3">3
+      </div>
+      <div class="question">
+        9. I was worried about situations in which I might panic and make a fool
+        of myself
+        <input type="radio" name="option9" value="0">0
+        <input type="radio" name="option9" value="1">1
+        <input type="radio" name="option9" value="2">2
+        <input type="radio" name="option9" value="3">3
+      </div>
+      <div class="question">
+        10. I felt that I had nothing to look forward to
+        <input type="radio" name="option10" value="0">0
+        <input type="radio" name="option10" value="1">1
+        <input type="radio" name="option10" value="2">2
+        <input type="radio" name="option10" value="3">3
+      </div>
+      <div class="question">
+        11. I found myself getting agitated
+        <input type="radio" name="option11" value="0">0
+        <input type="radio" name="option11" value="1">1
+        <input type="radio" name="option11" value="2">2
+        <input type="radio" name="option11" value="3">3
+      </div>
+      <div class="question">
+        12. I found it difficult to relax
+        <input type="radio" name="option12" value="0">0
+        <input type="radio" name="option12" value="1">1
+        <input type="radio" name="option12" value="2">2
+        <input type="radio" name="option12" value="3">3
+      </div>
+      <div class="question">
+        13. I felt down-hearted and blue
+        <input type="radio" name="option13" value="0">0
+        <input type="radio" name="option13" value="1">1
+        <input type="radio" name="option13" value="2">2
+        <input type="radio" name="option13" value="3">3
+      </div>
+      <div class="question">
+        14. I was intolerant of anything that kept me from getting on with what I
+        was doing
+        <input type="radio" name="option14" value="0">0
+        <input type="radio" name="option14" value="1">1
+        <input type="radio" name="option14" value="2">2
+        <input type="radio" name="option14" value="3">3
+      </div>
+      <div class="question">
+        15. I felt I was close to panic
+        <input type="radio" name="option15" value="0">0
+        <input type="radio" name="option15" value="1">1
+        <input type="radio" name="option15" value="2">2
+        <input type="radio" name="option15" value="3">3
+      </div>
+      <div class="question">
+        16. I was unable to become enthusiastic about anything
+        <input type="radio" name="option16" value="0">0
+        <input type="radio" name="option16" value="1">1
+        <input type="radio" name="option16" value="2">2
+        <input type="radio" name="option16" value="3">3
+      </div>
+      <div class="question">
+        17. I felt I wasn’t worth much as a person
+        <input type="radio" name="option17" value="0">0
+        <input type="radio" name="option17" value="1">1
+        <input type="radio" name="option17" value="2">2
+        <input type="radio" name="option17" value="3">3
+      </div>
+      <div class="question">
+        18. I felt that I was rather touchy
+        <input type="radio" name="option18" value="0">0
+        <input type="radio" name="option18" value="1">1
+        <input type="radio" name="option18" value="2">2
+        <input type="radio" name="option18" value="3">3
+      </div>
+      <div class="question">
+        19. I was aware of the action of my heart in the absence of physical <br>
+        exertion (e.g. sense of heart rate increase, heart missing a beat)
+        <input type="radio" name="option19" value="0">0
+        <input type="radio" name="option19" value="1">1
+        <input type="radio" name="option19" value="2">2
+        <input type="radio" name="option19" value="3">3
+      </div>
+      <div class="question">
+        20. I felt scared without any good reason
+        <input type="radio" name="option20" value="0">0
+        <input type="radio" name="option20" value="1">1
+        <input type="radio" name="option20" value="2">2
+        <input type="radio" name="option20" value="3">3
+      </div>
+      <div class="question">
+        21. I felt that life was meaningless
+        <input type="radio" name="option21" value="0">0
+        <input type="radio" name="option21" value="1">1
+        <input type="radio" name="option21" value="2">2
+        <input type="radio" name="option21" value="3">3
+      </div>
+
+    </div><br>
+    <a href="./index.html">
+      <button class="next_button1" type="button" name="button">Submit</button><br><br>
+    </a>
+  </div>
+  <script type="text/javascript" src="page1.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-database.js"></script>
+</body>
+
+</html>
